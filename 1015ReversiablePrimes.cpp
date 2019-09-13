@@ -4,7 +4,6 @@ using namespace std;
 
 bool IsPrime(int s)
 {
-	/*判断是否为素数的函数*/
 	if(s<=1) return false;
 	int sqr=(int)sqrt(1.0*s);
 	for(int i=2;i<=sqr;++i){
