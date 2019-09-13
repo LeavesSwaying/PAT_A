@@ -32,7 +32,7 @@ bool JudgeSeq()
 
 int main() 
 {
-	freopen("data.in","r",stdin);
+	//freopen("data.in","r",stdin);
 	scanf("%d%d%d",&M,&N,&K);
 	int a;
 	while(K--){
