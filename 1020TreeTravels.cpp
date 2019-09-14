@@ -58,7 +58,7 @@ void Travel(BinNode* Head)
 
 int main()
 {
-	freopen("data.in","r",stdin);
+	//freopen("data.in","r",stdin);
 	scanf("%d",&N);
 	for(int i=0;i<N;++i){
 		scanf("%d",&post[i]);
