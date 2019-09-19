@@ -3,8 +3,16 @@
 #include<cmath>
 using namespace std;
 
-int N,K,P,MaxFacSum;
+const int inf=0x3f3f3f3f;
+int N,K,P,MaxFacSum=-inf;
 vector<int> fac,ans,temp;
+int power(int x) {
+    int ans = 1;
+    for (int i = 0; i < P; i++) {
+        ans *= x;
+    }
+    return ans;
+}
 void DFS(int index,int NowK,int sum,int FacSum)
 {
 	if(sum==N&&NowK==K){
@@ -26,20 +34,18 @@ void DFS(int index,int NowK,int sum,int FacSum)
 int main()
 {
 	scanf("%d%d%d",&N,&K,&P);
-	fac.push_back(0);
-	int i=1,Tmp;
-	while(1)
+	int i=0,Tmp=0;
+	while(Tmp<=N)
 	{
-		Tmp=(int)pow(i++,P);
-		if(Tmp<N) fac.push_back(Tmp);
-		else break;
+        fac.push_back(Tmp);
+		Tmp=power(++i);
 	}
 	DFS(fac.size()-1,0,0,0);
-	if(MaxFacSum==-1) printf("Impossible\n");
+	if(MaxFacSum==-inf) printf("Impossible\n");
 	else{
-		printf("%d=%d^%d",N,ans[0],P);
+		printf("%d = %d^%d",N,ans[0],P);
 		for(i=1;i<ans.size();++i)
-			printf("+%d^%d",ans[i],P);
+			printf(" + %d^%d",ans[i],P);
 	}
 	return 0;
 } 
