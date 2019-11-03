@@ -18,7 +18,7 @@ bool cmp2(student a,student b)
 {
     
     int s=strcmp(a.name,b.name);
-	//if(a.name!=b.name) return strcmp(a.name,b.name);
+    //if(a.name!=b.name) return strcmp(a.name,b.name);
     if(s!=0) return s<0;
 	else return a.id<b.id; 
 }
