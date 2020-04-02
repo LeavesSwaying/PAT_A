@@ -9,7 +9,7 @@ int MSize,M,N;
 
 bool isPrime(int n)
 {
-	/*ÅÐ¶ÏËØÊýµÄº¯Êý*/
+	/*åˆ¤æ–­ç´ æ•°çš„å‡½æ•°*/
 	if(n<=1) return false;
 	int sqr=(int)sqrt(1.0*n);
 	for(int i=2;i<=sqr;++i)
@@ -17,7 +17,6 @@ bool isPrime(int n)
 	return true;
 } 
 
-bool F=false;
 void insert(int x)
 {
 	for(int i=0;i<=MSize/2;++i)
@@ -34,7 +33,7 @@ void insert(int x)
 
 int main()
 {	
-	/*³õÊ¼»¯¹þÏ£±í*/ 
+	/*åˆå§‹åŒ–å“ˆå¸Œè¡¨*/ 
 	fill(HashTable,HashTable+MaxN,-1); 
 	
 	scanf("%d%d%d",&MSize,&N,&M);
@@ -50,17 +49,17 @@ int main()
 	for(int i=0;i<M;++i)
 	{
 		scanf("%d",&a);
-		/*ÀíÂÛÉÏj<=MSize/2¼´¿ÉÂú×ãËùÓÐÒªÇó£¬µ«ÕâÀïÌ½²âµ½ÁËj<=MSize*/ 
+		/*ç†è®ºä¸Šj<=MSize/2å³å¯æ»¡è¶³æ‰€æœ‰è¦æ±‚ï¼Œä½†è¿™é‡ŒæŽ¢æµ‹åˆ°äº†j<=MSize*/ 
 		for(int j=0;j<=MSize;++j)
 		{
 			int y=(a+j*j)%MSize;
 			num++;
-			/*Òª×¢Òâ·¢ÏÖ¿ÕÔªËØÒ²±íÊ¾ÔªËØ²»´æÔÚÓÚ¹þÏ£±íÖÐ*/
+			/*è¦æ³¨æ„å‘çŽ°ç©ºå…ƒç´ ä¹Ÿè¡¨ç¤ºå…ƒç´ ä¸å­˜åœ¨äºŽå“ˆå¸Œè¡¨ä¸­*/
 			if(HashTable[y]==-1||HashTable[y]==a)
 				break;
 		}
 	}
-	/*ÕâÀï¿ÉÒÔ¿´³ö¸¡µã±£Áô½øÖÆÊÇËÄÉáÎåÈë*/
+	/*è¿™é‡Œå¯ä»¥çœ‹å‡ºæµ®ç‚¹ä¿ç•™è¿›åˆ¶æ˜¯å››èˆäº”å…¥*/
 	printf("%0.1lf\n",1.0*num/M);
 	return 0;
 } 
